@@ -7,6 +7,9 @@ void Game::Init(const char* title, int width, int height, int bpp, bool fullscre
 {
 	int flags = 0;
 	
+	testSprite = NULL;
+	testSprite = Sprite::Load("test.bmp");
+	
 	// initialize SDL
 	SDL_Init(SDL_INIT_EVERYTHING);
 	
@@ -64,6 +67,7 @@ void Game::Update()
 
 void Game::Draw()
 {
+	Sprite::Draw(screen, testSprite, 0, 0);
 }
 
 void Game::Clean()

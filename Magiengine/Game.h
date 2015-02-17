@@ -2,6 +2,7 @@
 #define _GAME_H_
 
 #include "SDL2/SDL.h"
+#include "Sprite.h"
 
 class Game
 {
@@ -19,5 +20,6 @@ class Game
 		bool m_bRunning;
 		SDL_Window* screen;
 		bool m_bFullscreen;
+		SDL_Window* testSprite;
 };
 #endif

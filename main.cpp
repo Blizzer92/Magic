@@ -4,7 +4,7 @@ int main(int argc, char* argv[])
 {
 	Game game;
 	
-	game.Init("test",640,480,32,false,false);
+	game.Init("Da hast du es Henry!",640,480,32,false,true);
 	
 	while(game.Running())
 	{
