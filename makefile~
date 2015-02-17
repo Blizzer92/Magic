@@ -3,7 +3,7 @@ test:
 	make run;
 
 build:
-	g++ -o test main.cpp Magiengine/Game.cpp -lSDL2;
+	g++ -o test main.cpp -lSDL2 -Magiengine\/Game.cpp;
 
 run:
 	./test;

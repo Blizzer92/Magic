@@ -1,9 +1,22 @@
-#include <SDL2/SDL.h> 
+#include "Magiengine/Game.h"
 
-int main( int argc, char* args[] ) 
-{ 	//Start SDL 
-	SDL_Init( SDL_INIT_EVERYTHING ); 
-	//Quit SDL 
-	SDL_Quit(); 
-	return 0; 
+int main(int argc, char* argv[]) 
+{
+	Game game;
+	
+	game.Init("test",640,480,32,false,false);
+	
+	while(game.Running())
+	{
+		game.HandleEvents(&game);
+		game.Update();
+		game.Draw();
+	}
+	
+	// cleanup the engine
+	game.Clean();
+	
+	return 0;
 }
+
+
