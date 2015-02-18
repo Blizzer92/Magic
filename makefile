@@ -1,6 +1,10 @@
 CXX = g++
 CXXFLAGS = -g -Wno-write-strings
-LDFLAGS = -lSDL2
+LDFLAGS = -g
+
+PACKAGES = sdl2
+CXXFLAGS += `pkg-config --cflags $(PACKAGES)`
+LDFLAGS  += `pkg-config --libs $(PACKAGES)`
 
 SOURCES = $(wildcard *.cpp) $(wildcard Magiengine/*.cpp)
 OBJECTS = $(patsubst %.cpp,%.o,$(SOURCES))
