@@ -16,7 +16,7 @@ void PlayState::Init(Game* game)
 
 void PlayState::Clean()
 {
-	SDL_DestroyTexture(testSprite);
+	SDL_DestroyTexture(playSprite);
 	printf("PlayState Clean Successful\n");
 }
 
