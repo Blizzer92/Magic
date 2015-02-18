@@ -1,14 +1,19 @@
-#include "Game.h"
+#include "Magiengine/Game.h"
+#include "PlayState.h"
+#include <iostream>
+
 
 int main(int argc, char* argv[]) 
 {
 	Game game;
 	
-	game.Init();
+	game.Window("Test",640,480,32,false,true);
+	
+	game.ChangeState(PlayState::Instance());
 	
 	while(game.Running())
 	{
-		game.HandleEvents(&game);
+		game.HandleEvents();
 		game.Update();
 		game.Draw();
 	}
