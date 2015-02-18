@@ -1,10 +1,10 @@
-#include "Magiengine/Game.h"
+#include "Game.h"
 
 int main(int argc, char* argv[]) 
 {
 	Game game;
 	
-	game.Init("Test",640,480,32,false,true);
+	game.Init();
 	
 	while(game.Running())
 	{

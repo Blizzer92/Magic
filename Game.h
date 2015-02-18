@@ -2,13 +2,14 @@
 #define _GAME_H_
 
 #include <SDL2/SDL.h>
-#include "Sprite.h"
+#include "Magiengine/Sprite.h"
+#include "Magiengine/Create.h"
 
 class Game
 {
 	public:		
 		Game();		  
-		void Init(const char* title, int width, int height,int bpp, bool fullscreen, bool debug);			  
+		void Init();			  
 		void HandleEvents(Game* game);   
 		void Update();	   
 		void Draw();
@@ -17,10 +18,8 @@ class Game
 		void Quit();
 
 	private:		   
-		bool m_bRunning;
-		SDL_Window* screen;
-		SDL_Renderer* renderer;
-		bool m_bFullscreen;
 		SDL_Texture* testSprite;
+		Create create;
+		int test;	
 };
 #endif
