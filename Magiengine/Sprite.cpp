@@ -10,7 +10,7 @@ SDL_Texture* Sprite::Load(char* File, SDL_Renderer* ren)
 	SDL_Surface* temp = NULL;
 	SDL_Texture* optimized = NULL;
 
-	if((temp = SDL_LoadBMP(File)) == NULL)
+	if((temp = IMG_Load(File)) == NULL)
 	{
 		  return NULL;
 	}

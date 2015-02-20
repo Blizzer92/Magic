@@ -13,8 +13,8 @@ void Game::Window(const char* title, int width, int height, int bpp, bool fullsc
 	
 	// initialize SDL
 	SDL_Init(SDL_INIT_EVERYTHING);
-	
-	
+	IMG_Init(IMG_INIT_JPG | IMG_INIT_PNG);
+ 	
 	if ( fullscreen ) {
 		flags = SDL_WINDOW_FULLSCREEN;
 	}
@@ -99,8 +99,8 @@ void Game::Clean()
 	while ( !states.empty() ) {
 		states.back()->Clean();
 		states.pop_back();
-	}
-	
+	};
+	IMG_Quit();
 	SDL_Quit();
 }
 

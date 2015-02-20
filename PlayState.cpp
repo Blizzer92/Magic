@@ -11,6 +11,9 @@ void PlayState::Init(Game* game)
 
 	playSprite = NULL;
 	playSprite = Sprite::Load("test.bmp", game->GetScreen());
+	
+	test = new Objekt(playSprite, 0,0,50,50);
+	
 	printf("PlayState Init Successful\n");
 }
 
@@ -50,7 +53,7 @@ void PlayState::Update(Game* game)
 void PlayState::Draw(Game* game) 
 {
 	SDL_RenderClear(game->GetScreen());
-	Sprite::Draw(game->GetScreen(), playSprite, 0, 0);
+	test->Draw(game->GetScreen());
 	Sprite::Draw(game->GetScreen(), playSprite, 100, 100, 100, 100);
 	Sprite::Draw(game->GetScreen(), playSprite, 300, 300, 100, 100, 0, 0);
 	SDL_RenderPresent(game->GetScreen());;

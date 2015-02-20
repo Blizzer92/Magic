@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS = -g -Wno-write-strings
 LDFLAGS = -g
 
-PACKAGES = sdl2
+PACKAGES = sdl2 sdl2_image
 CXXFLAGS += `pkg-config --cflags $(PACKAGES)`
 LDFLAGS  += `pkg-config --libs $(PACKAGES)`
 

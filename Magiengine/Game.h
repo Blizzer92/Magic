@@ -2,7 +2,9 @@
 #define _GAME_H_
 
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include "Sprite.h"
+#include "Objekt.h"
 
 #include <vector>
 
