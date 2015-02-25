@@ -16,14 +16,14 @@ class Sprite
      */
 		Sprite();
         /**
-         * Funktion zum Laden der Texturen
+         * Laden der Texturen
          * @param pFile Pfad zur Datei
          * @param ren Pointer zum Renderer
          * @return Die Texture des Bildes
          */
 		static SDL_Texture* Load(char* pFile, SDL_Renderer* ren);
         /**
-         * Funktion zum Zeichen der Texturen
+         * Zeichen der Texturen
          * Orginal Größe der Texture mit X und Y Position
          * @param dest Renderer der für das Zeichnen der Texture benötigt wird
          * @param src die Texture die gerendert werden soll
@@ -33,7 +33,7 @@ class Sprite
          */
 		static bool Draw(SDL_Renderer* dest, SDL_Texture* src, int x, int y);
         /**
-         * Funktion zum Zeichnen der Texture
+         * Zeichnen der Texture
          * Angegebene Größe mit X und Y Position
          * @param dest Renderer der für das Zeichnen der Texture benötigt wird
          * @param src die Texture die gerendert werden soll
@@ -45,7 +45,7 @@ class Sprite
          */
 		static bool Draw(SDL_Renderer* dest, SDL_Texture* src, int x, int y, int width, int height);
         /**
-         * Funktion zum Zeichnen der Texture
+         * Zeichnen der Texture
          * Zeichnet einen Ausschnitt der Texture
          * an einer Bestimmten stelle mit einer bestimmten Größe
          * @param dest Renderer der für das Zeichnen der Texturen benötigt wird
