@@ -4,7 +4,7 @@ LDFLAGS = -g
 
 include config.makefile
 
-SOURCES = $(wildcard *.cpp) $(wildcard Magicngine/*.cpp)
+SOURCES = $(wildcard *.cpp) $(wildcard Magicengine/*.cpp)
 OBJECTS = $(patsubst %.cpp,%.o,$(SOURCES))
 GENERATED = test .gitignore $(OBJECTS)
 
