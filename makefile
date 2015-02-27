@@ -4,7 +4,7 @@ LDFLAGS = -g
 
 include config.makefile
 
-SOURCES = $(wildcard *.cpp) $(wildcard Magiengine/*.cpp)
+SOURCES = $(wildcard *.cpp) $(wildcard Magicngine/*.cpp)
 OBJECTS = $(patsubst %.cpp,%.o,$(SOURCES))
 GENERATED = test .gitignore $(OBJECTS)
 
@@ -15,6 +15,11 @@ all: test .gitignore
 
 test: $(OBJECTS)
 	$(CXX) -o $@ $? $(LDFLAGS)
+
+doku:
+	doxygen doxygen
+	scp -r Doku/html/* sven@blizzer-gaming.de:/var/www/doku
+	rm -r Doku/
 
 clean:
 	rm -fv $(GENERATED)

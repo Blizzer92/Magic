@@ -1,19 +1,21 @@
 #include <stdio.h>
 
 #include "SDL2/SDL.h"
-#include "Magiengine/Game.h"
+#include "Magicengine/Game.h"
 #include "PlayState.h"
 
 PlayState PlayState::m_PlayState;
 
 void PlayState::Init(Game* game)
-{	
+{
 
 	playSprite = NULL;
-	playSprite = Sprite::Load("test.bmp", game->GetScreen());
-	
+	playSprite = Sprite::Load("test.png", game->GetScreen());
+	textColor = { 255, 255, 255 };
+	Font = Font::Load("Font/lazy.ttf", 26);
 	test = new Objekt(playSprite, 0,0,50,50);
-	
+	timer = new Timer();
+	timer->start();
 	printf("PlayState Init Successful\n");
 }
 
@@ -33,10 +35,10 @@ void PlayState::Resume()
 	printf("PlayState Resumed\n");
 }
 
-void PlayState::HandleEvents(Game* game)									
+void PlayState::HandleEvents(Game* game)
 {
 	SDL_Event event;
-	
+
 	if (SDL_PollEvent(&event)) {
 		switch (event.type) {
 			case SDL_QUIT:
@@ -46,17 +48,19 @@ void PlayState::HandleEvents(Game* game)
 	}
 }
 
-void PlayState::Update(Game* game) 
+void PlayState::Update(Game* game)
 {
+	timeText.str( "" ); 
+	timeText << "Seconds since start time " << (timer->getTicks()/1000.f);
 }
 
-void PlayState::Draw(Game* game) 
+void PlayState::Draw(Game* game)
 {
-	SDL_RenderClear(game->GetScreen());
+
+	Font::Draw(timeText.str(), Font, textColor, 50, 50, game->GetScreen());
 	test->Draw(game->GetScreen());
-	Sprite::Draw(game->GetScreen(), playSprite, 100, 100, 100, 100);
-	Sprite::Draw(game->GetScreen(), playSprite, 300, 300, 100, 100, 0, 0);
-	SDL_RenderPresent(game->GetScreen());;
+	Sprite::Draw(game->GetScreen(), playSprite, 100, 100);
+	
 }
 
 
