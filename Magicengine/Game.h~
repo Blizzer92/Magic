@@ -36,6 +36,5 @@ class Game
 	private:
 		std::vector<GameState*> states;
 		SDL_Texture* schrift;
-		TTF_Font* renderFont;
 };
 #endif

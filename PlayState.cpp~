@@ -17,7 +17,7 @@ void PlayState::Init(Game* game)
 	test = new Objekt(playSprite, 0,0,50,50);
 	test2 = new Objekt(playSprite, 30,30,60,60);
 	timer = new Timer();
-	timer->start();
+
 	printf("PlayState Init Successful\n");
 }
 

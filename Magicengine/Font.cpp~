@@ -14,7 +14,7 @@ if(renderFont == NULL)
 	
 	
 }
-
+printf("Schrift geladen\n");
     SDL_Surface* textSurface = TTF_RenderText_Solid(renderFont, text.c_str(), color);
 
     optimized = SDL_CreateTextureFromSurface(ren, textSurface);
