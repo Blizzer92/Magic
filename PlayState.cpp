@@ -11,11 +11,9 @@ void PlayState::Init(Game* game)
 
 	playSprite = NULL;
 	playSprite = Sprite::Load("test.png", game->GetScreen());
-	schrift = NULL;
 	textColor = { 255, 255, 255 };
-	renderFont = TTF_OpenFont("Font/lazy.ttf", 26);
+	Font = Font::Load("Font/lazy.ttf", 26);
 	test = new Objekt(playSprite, 0,0,50,50);
-	test2 = new Objekt(playSprite, 30,30,60,60);
 	timer = new Timer();
 	timer->start();
 	printf("PlayState Init Successful\n");
@@ -52,18 +50,17 @@ void PlayState::HandleEvents(Game* game)
 
 void PlayState::Update(Game* game)
 {
-	timeText.str( "" ); timeText << "Seconds since start time " << ( timer->getTicks() / 1000.f ) ; 
-	schrift = Font::Load(timeText.str().c_str(),renderFont ,textColor , game->GetScreen());
+	timeText.str( "" ); 
+	timeText << "Seconds since start time " << (timer->getTicks()/1000.f);
+	 
 }
 
 void PlayState::Draw(Game* game)
 {
-	
-	Font::Draw(game->GetScreen(), schrift, 120, 120);
+
+	Font::Draw(timeText.str(), Font, textColor, 50, 50, game->GetScreen());
 	test->Draw(game->GetScreen());
-	test2->Draw(game->GetScreen());
-	Sprite::Draw(game->GetScreen(), playSprite, 100, 100, 100, 100);
-	Sprite::Draw(game->GetScreen(), playSprite, 300, 300, 100, 100, 0, 0);
+	Sprite::Draw(game->GetScreen(), playSprite, 100, 100);
 	
 }
 

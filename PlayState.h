@@ -35,12 +35,10 @@ class PlayState : public GameState
 		static PlayState m_PlayState;
 		SDL_Texture* playSprite;
 		Objekt* test;
-		Objekt* test2;
-		SDL_Texture* schrift;
 		Timer* timer;
 		std::stringstream timeText;
 		SDL_Color textColor;
-		TTF_Font* renderFont;
+		TTF_Font* Font;
 
 };
 

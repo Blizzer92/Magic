@@ -23,7 +23,7 @@ class Font
          * @param color Farbe der Schrift
          * @param ren Der Renderer
          */
-        static SDL_Texture* Load(std::string text, TTF_Font* renderFont, SDL_Color color, SDL_Renderer* ren);
+        static TTF_Font* Load(char* file, int size);
         /**
          * Rendert die Schrift auf den Bildschirm
          * @param dest Render Ziel
@@ -32,9 +32,7 @@ class Font
          * @param y Y-Position für den Text
          * @return bool
          */
-        static bool Draw(SDL_Renderer* dest, SDL_Texture* src, int x, int y);
-
-	
+        static bool Draw(std::string text,TTF_Font* font, SDL_Color color, int x, int y, SDL_Renderer* ren);
 
 };
 #endif

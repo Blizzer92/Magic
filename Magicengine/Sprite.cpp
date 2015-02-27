@@ -1,6 +1,5 @@
 #include "Sprite.h"
 
-// constructor 
 Sprite::Sprite()
 {
 }
