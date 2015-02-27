@@ -2,7 +2,7 @@
 #include "Sprite.h"
 
 	Objekt::Objekt(SDL_Texture* src, int x, int y, int width, int height){
-		texture = src;
+		setTexture(src);
 		setX(x);
 		setY(y);
 		setWidth(width);
@@ -22,6 +22,9 @@
 		int Objekt::getHeight(){
 			return height;
 		}
+        SDL_Texture* Objekt::getTexture(){
+            return texture;
+        }
 		void Objekt::setX(int newx){
 			x = newx;
 		}
@@ -34,6 +37,9 @@
 		void Objekt::setHeight(int newheight){
 			height = newheight;
 		}
+        void Objekt::setTexture(SDL_Texture* tex){
+        texture = tex;
+        }
 		void Objekt::Draw(SDL_Renderer* ren){
 			Sprite::Draw(ren, texture, x, y,width, height);
 		}

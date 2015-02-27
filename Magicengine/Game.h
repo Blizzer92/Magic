@@ -3,9 +3,10 @@
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+#include <SDL2/SDL_ttf.h>
 #include "Sprite.h"
 #include "Objekt.h"
-
+#include "Font.h"
 #include <vector>
 
 class GameState;
@@ -34,5 +35,6 @@ class Game
 
 	private:
 		std::vector<GameState*> states;
+		SDL_Texture* schrift;
 };
 #endif

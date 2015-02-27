@@ -13,6 +13,7 @@ void Game::Window(const char* title, int width, int height, int bpp, bool fullsc
 
 	// initialize SDL
 	SDL_Init(SDL_INIT_EVERYTHING);
+	TTF_Init();
 
 	if ( fullscreen ) {
 		flags = SDL_WINDOW_FULLSCREEN;
@@ -33,7 +34,8 @@ void Game::Window(const char* title, int width, int height, int bpp, bool fullsc
 
 
 	m_bRunning = true;
-
+	SDL_Color textColor = { 255, 255, 255 };
+    	schrift = Font::Load("Hallo das ist ein Test", "Font/lazy.ttf",textColor , renderer);
 		// print our success
 	printf("Game Initialised Succesfully\n");
 }
@@ -90,6 +92,7 @@ void Game::Update()
 
 void Game::Draw()
 {
+    Font::Draw(renderer, schrift, 0, 0);
 	states.back()->Draw(this);
 }
 

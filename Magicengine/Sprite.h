@@ -1,5 +1,5 @@
 /**
- * Eine Klasse zum Zeichen von Bildern
+ * Eine Klasse zum Zeichen und Laden von Bildern
  */
 
 #ifndef  _SPRITE_H_
