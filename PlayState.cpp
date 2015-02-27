@@ -52,7 +52,6 @@ void PlayState::Update(Game* game)
 {
 	timeText.str( "" ); 
 	timeText << "Seconds since start time " << (timer->getTicks()/1000.f);
-	 
 }
 
 void PlayState::Draw(Game* game)

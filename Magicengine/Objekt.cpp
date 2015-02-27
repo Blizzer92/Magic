@@ -1,7 +1,7 @@
 #include "Objekt.h"
 #include "Sprite.h"
 
-	Objekt::Objekt(SDL_Texture* src, int x, int y, int width, int height){
+	Objekt::Objekt(SDL_Texture* src, float x, float y, int width, int height){
 		setTexture(src);
 		setX(x);
 		setY(y);
@@ -10,10 +10,10 @@
 	}
 
 
-		int Objekt::getX(){
+		float Objekt::getX(){
 			return x;
 		}
-		int Objekt::getY(){
+		float Objekt::getY(){
 			return y;
 		}
 		int Objekt::getWidth(){
@@ -25,10 +25,10 @@
         SDL_Texture* Objekt::getTexture(){
             return texture;
         }
-		void Objekt::setX(int newx){
+		void Objekt::setX(float newx){
 			x = newx;
 		}
-		void Objekt::setY(int newy){
+		void Objekt::setY(float newy){
 			y = newy;
 		}
 		void Objekt::setWidth(int newwidth){

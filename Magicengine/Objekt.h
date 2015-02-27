@@ -20,17 +20,17 @@ class Objekt
          * @param width Breite des Objektes
          * @param height Höhe des Objektes
          */
-		Objekt(SDL_Texture* src, int x, int y, int width, int height);
+		Objekt(SDL_Texture* src,float x, float y, int width, int height);
         /**
          * Gibt die x-Position zurück
          * @return int
          */
-		int getX();
+		float getX();
         /**
          * Git die y-Position zurück
          * @return int
          */
-		int getY();
+		float getY();
         /**
          * Gint die Breite zurück
          * @return int
@@ -50,12 +50,12 @@ class Objekt
          * Setzt die X-Position neu
          * @param x
          */
-		void setX(int x);
+		void setX(float x);
         /**
          * Setzt die Y-Position neu
          * @param y
          */
-		void setY(int y);
+		void setY(float y);
         /**
          * Setzt die Höhe neu
          * @param width
@@ -80,8 +80,8 @@ class Objekt
 
 
 	private:
-	   int x;
-	   int y;
+	   float x;
+	   float y;
 	   int width;
 	   int height;
 	   SDL_Texture* texture;
