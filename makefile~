@@ -27,5 +27,6 @@ clean:
 	for file in $(GENERATED) ; do \
 		echo /$$file >> $@ ; \
 	done \
+	cat gitignore_append >> $@
 
 .PHONY: all clean
