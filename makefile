@@ -6,7 +6,7 @@ include config.makefile
 
 SOURCES = $(wildcard *.cpp) $(wildcard Magicengine/*.cpp)
 OBJECTS = $(patsubst %.cpp,%.o,$(SOURCES))
-GENERATED = test .gitignore $(OBJECTS)
+GENERATED = test doxygen $(OBJECTS)
 
 all: test .gitignore
 
