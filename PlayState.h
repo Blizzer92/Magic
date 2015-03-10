@@ -39,7 +39,8 @@ class PlayState : public GameState
 		Timer* timer;
 		std::stringstream timeText;
 		SDL_Color textColor;
-		TTF_Font* Font;
+		TTF_Font* fonttype;
+		Font* timeFont;
 
 };
 

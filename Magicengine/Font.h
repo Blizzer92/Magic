@@ -1,5 +1,5 @@
 /**
- * Klasse um Text auf den Bildschirm zu bringen
+ * Class for drawing font
  */
 
 
@@ -13,16 +13,32 @@
 class Font
 {
     public:
-        Font();
+        Font(std::string text,TTF_Font* font, SDL_Color color, int x, int y, SDL_Renderer* ren);
         /**
          * Rendert die Schrift auf den Bildschirm
-         * @param dest Render Ziel
-         * @param src Die zu Renderende Schrift
-         * @param x X-Postition für den Text
-         * @param y Y-Position für den Text
          * @return bool
          */
-        static bool Draw(std::string text,TTF_Font* font, SDL_Color color, int x, int y, SDL_Renderer* ren);
+        bool Draw();
+        void setText(std::string text);
+        void setFont(TTF_Font* font);
+        void setColor(SDL_Color color);
+        void setX(int x);
+        void setY(int y);
+        void setRenderer(SDL_Renderer* ren);
+        std::string getText();
+        TTF_Font* getFont();
+        SDL_Color getColor();
+        int getX();
+        int getY();
+        SDL_Renderer* getRenderer();
+
+      private:
+        std::string text;
+        TTF_Font* font;
+        SDL_Color color;
+        int x;
+        int y;
+        SDL_Renderer* ren;
 
 };
 #endif
