@@ -1,5 +1,6 @@
 #include "Objekt.h"
-#include "Sprite.h"
+#include "Texture.h"
+#include "Load.h"
 
 	Objekt::Objekt(SDL_Texture* src, float x, float y, int width, int height){
 		setTexture(src);
@@ -41,5 +42,5 @@
         texture = tex;
         }
 		void Objekt::Draw(SDL_Renderer* ren){
-			Sprite::Draw(ren, texture, x, y,width, height);
+			Texture::Draw(ren, texture, x, y,width, height);
 		}

@@ -3,7 +3,8 @@
 
 #include "SDL2/SDL.h"
 #include "Magicengine/GameState.h"
-#include "Magicengine/Sprite.h"
+#include "Magicengine/Texture.h"
+#include "Magicengine/Load.h"
 #include "Magicengine/Font.h"
 #include "Magicengine/Timer.h"
 #include <string>
@@ -33,7 +34,7 @@ class PlayState : public GameState
 
 	private:
 		static PlayState m_PlayState;
-		SDL_Texture* playSprite;
+		SDL_Texture* playTexture;
 		Objekt* test;
 		Timer* timer;
 		std::stringstream timeText;
@@ -43,5 +44,3 @@ class PlayState : public GameState
 };
 
 #endif
-
-

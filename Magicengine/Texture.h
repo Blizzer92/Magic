@@ -2,26 +2,20 @@
  * Eine Klasse zum Zeichen und Laden von Bildern
  */
 
-#ifndef  _SPRITE_H_
-#define _SPRITE_H_
+#ifndef  _TEXTURE_H_
+#define _TEXTURE_H_
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
-class Sprite
+class Texture
 {
 	public:
     /**
      *Der Constructor
      */
-		Sprite();
-        /**
-         * Laden der Texturen
-         * @param pFile Pfad zur Datei
-         * @param ren Pointer zum Renderer
-         * @return Die Texture des Bildes
-         */
-		static SDL_Texture* Load(char* pFile, SDL_Renderer* ren);
+		Texture();
+
         /**
          * Zeichen der Texturen
          * Orginal Größe der Texture mit X und Y Position

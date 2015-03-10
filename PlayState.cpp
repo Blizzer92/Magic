@@ -9,11 +9,11 @@ PlayState PlayState::m_PlayState;
 void PlayState::Init(Game* game)
 {
 
-	playSprite = NULL;
-	playSprite = Sprite::Load("test.png", game->GetScreen());
+	playTexture = NULL;
+	playTexture = Load::Texture("test.png", game->GetScreen());
 	textColor = { 255, 255, 255 };
-	Font = Font::Load("Font/lazy.ttf", 26);
-	test = new Objekt(playSprite, 0,0,50,50);
+	Font = Load::Font("Font/lazy.ttf", 26);
+	test = new Objekt(playTexture, 0,0,50,50);
 	timer = new Timer();
 	timer->start();
 	printf("PlayState Init Successful\n");
@@ -21,7 +21,7 @@ void PlayState::Init(Game* game)
 
 void PlayState::Clean()
 {
-	SDL_DestroyTexture(playSprite);
+	SDL_DestroyTexture(playTexture);
 	printf("PlayState Clean Successful\n");
 }
 
@@ -50,7 +50,7 @@ void PlayState::HandleEvents(Game* game)
 
 void PlayState::Update(Game* game)
 {
-	timeText.str( "" ); 
+	timeText.str( "" );
 	timeText << "Seconds since start time " << (timer->getTicks()/1000.f);
 }
 
@@ -59,8 +59,6 @@ void PlayState::Draw(Game* game)
 
 	Font::Draw(timeText.str(), Font, textColor, 50, 50, game->GetScreen());
 	test->Draw(game->GetScreen());
-	Sprite::Draw(game->GetScreen(), playSprite, 100, 100);
-	
+	Texture::Draw(game->GetScreen(), playTexture, 100, 100);
+
 }
-
-

@@ -8,22 +8,12 @@
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
-#include <SDL2/SDL_image.h>
-#include <stdio.h>
 #include <string>
 
 class Font
 {
     public:
         Font();
-        /**
-         * Lädt die Schrift mit Farbe
-         * @param text String der Ausgegeben werden soll
-         * @param font Pfad zur Font
-         * @param color Farbe der Schrift
-         * @param ren Der Renderer
-         */
-        static TTF_Font* Load(char* file, int size);
         /**
          * Rendert die Schrift auf den Bildschirm
          * @param dest Render Ziel
