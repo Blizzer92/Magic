@@ -19,8 +19,9 @@ class Object
          * @param y Y Position des Objectes
          * @param width Breite des Objectes
          * @param height Höhe des Objectes
+				 * @param ren Renderer
          */
-		Object(SDL_Texture* src,float x, float y, int width, int height);
+		Object(SDL_Texture* src,float x, float y, int width, int height, SDL_Renderer* newren);
         /**
          * Gibt die x-Position zurück
          * @return int
@@ -45,7 +46,17 @@ class Object
          * Gibt die Texture zurück
          * @return SDL_TEXTURE
          */
-        SDL_Texture* getTexture();
+    SDL_Texture* getTexture();
+				/**
+				* Get the renderer from the object
+				* @return SDL_Renderer
+				*/
+		SDL_Renderer* getRenderer();
+				/**
+				 * Set the renderer for the object
+				 * @pram ren
+				 */
+		void setRenderer(SDL_Renderer* newren);
         /**
          * Setzt die X-Position neu
          * @param x
@@ -70,12 +81,12 @@ class Object
          * Setzt die Texture neu
          * @param tex
          */
-        void setTexture(SDL_Texture* tex);
+    void setTexture(SDL_Texture* tex);
         /**
          * Zeichnet das Object auf den Renderer
          * @param ren der Renderer
          */
-		void Draw(SDL_Renderer* ren);
+		void Draw();
 
 
 
@@ -85,5 +96,6 @@ class Object
 	   int width;
 	   int height;
 	   SDL_Texture* texture;
+		 SDL_Renderer* ren;
 };
 #endif

@@ -2,12 +2,13 @@
 #include "Texture.h"
 #include "Load.h"
 
-	Object::Object(SDL_Texture* src, float x, float y, int width, int height){
+	Object::Object(SDL_Texture* src, float x, float y, int width, int height, SDL_Renderer* newren){
 		setTexture(src);
 		setX(x);
 		setY(y);
 		setWidth(width);
 		setHeight(height);
+		setRenderer(newren);
 	}
 
 
@@ -26,6 +27,15 @@
     SDL_Texture* Object::getTexture(){
         return texture;
     }
+
+		SDL_Renderer* Object::getRenderer(){
+				return ren;
+		}
+
+		void Object::setRenderer(SDL_Renderer* newren){
+			ren = newren;
+		}
+
 		void Object::setX(float newx){
 			x = newx;
 		}
@@ -41,6 +51,6 @@
     void Object::setTexture(SDL_Texture* tex){
     texture = tex;
     }
-		void Object::Draw(SDL_Renderer* ren){
+		void Object::Draw(){
 			Texture::Draw(ren, texture, x, y,width, height);
 		}
