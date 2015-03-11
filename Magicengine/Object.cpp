@@ -1,6 +1,6 @@
 #include "Object.h"
 
-	Object::Object(SDL_Texture* src, SDL_Renderer* ren, float x, float y){
+	Object::Object(SDL_Texture* src, SDL_Renderer* ren, float x, float y, bool gravity){
 		int w;
 		int h;
 		SDL_QueryTexture(src, NULL, NULL, &w, &h);
@@ -10,8 +10,14 @@
 		setWidth(w);
 		setHeight(h);
 		setRenderer(ren);
+
+		if(gravity)
+		{
+			Physics::addObject(this);
+		}
+
 	}
-	Object::Object(SDL_Texture* src, SDL_Renderer* ren, float x, float y, int width, int height)
+	Object::Object(SDL_Texture* src, SDL_Renderer* ren, float x, float y, int width, int height, bool gravity)
 	{
 		setTexture(src);
 		setX(x);
@@ -19,6 +25,11 @@
 		setWidth(width);
 		setHeight(height);
 		setRenderer(ren);
+
+		if(gravity)
+		{
+			Physics::addObject(this);
+		}
 	}
 
 

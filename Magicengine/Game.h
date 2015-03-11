@@ -8,6 +8,7 @@
 #include "Object.h"
 #include "Timer.h"
 #include "Font.h"
+#include "Physics.h"
 #include <vector>
 
 class GameState;
@@ -16,7 +17,7 @@ class Game
 {
 	public:
 		Game();
-		void Window(const char* title, int width, int height, int bpp, bool fullscreen, bool debug);
+		void Window(const char* title, int width, int height, int bpp, bool fullscreen, int fps);
 		void Init(Game* game);
 		void ChangeState(GameState* state);
 		void PushState(GameState* state);

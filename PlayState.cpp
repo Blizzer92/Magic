@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 #include "SDL2/SDL.h"
 #include "Magicengine/Game.h"
 #include "PlayState.h"
@@ -13,8 +12,8 @@ void PlayState::Init(Game* game)
 	playTexture = Load::Texture("test.png", game->GetScreen());
 	textColor = { 255, 255, 255 };
 	fonttype = Load::Font("Font/lazy.ttf", 26);
-	test = new Object(playTexture, game->GetScreen(), 0,0,50,50);
-	test2 = new Object(playTexture, game->GetScreen(), 100,100);
+	test = new Object(playTexture, game->GetScreen(), 0,0,50,50, true);
+	test2 = new Object(playTexture, game->GetScreen(), 100,100, true);
 	timeFont = new Font(timeText.str(), fonttype, textColor, 50, 50, game->GetScreen());
 	timer = new Timer();
 	timer->start();

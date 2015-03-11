@@ -4,8 +4,7 @@ Game::Game()
 {
 }
 
-
-void Game::Window(const char* title, int width, int height, int bpp, bool fullscreen, bool debug)
+void Game::Window(const char* title, int width, int height, int bpp, bool fullscreen, int fps)
 {
 	int flags = 0;
 
@@ -33,7 +32,7 @@ void Game::Window(const char* title, int width, int height, int bpp, bool fullsc
 
 		countedFrames = 0;
 		fpsTimer.start();
-		SCREEN_FPS = 60;
+		SCREEN_FPS = fps;
 		SCREEN_TICK_PER_FRAME = 1000 / SCREEN_FPS;
 
 	printf("Game Initialised Succesfully\n");
@@ -100,7 +99,6 @@ void Game::Draw()
 	SDL_RenderClear(renderer);
 	states.back()->Draw(this);
 	SDL_RenderPresent(renderer);
-
 	++countedFrames;
 
 	int frameTicks = capTimer.getTicks();
