@@ -38,5 +38,11 @@ class Game
 		std::vector<GameState*> states;
 		SDL_Texture* schrift;
 		TTF_Font* renderFont;
+		Timer fpsTimer;
+		Timer capTimer;
+		int countedFrames;
+		int SCREEN_FPS;
+		int SCREEN_TICK_PER_FRAME;
+		float avgFPS;
 };
 #endif

@@ -29,6 +29,13 @@ void Game::Window(const char* title, int width, int height, int bpp, bool fullsc
 
 	m_bRunning = true;
 		// print our success
+
+
+		countedFrames = 0;
+		fpsTimer.start();
+		SCREEN_FPS = 60;
+		SCREEN_TICK_PER_FRAME = 1000 / SCREEN_FPS;
+
 	printf("Game Initialised Succesfully\n");
 }
 
@@ -73,6 +80,12 @@ void Game::PopState()
 
 void Game::HandleEvents()
 {
+	capTimer.start();
+	avgFPS = countedFrames / ( fpsTimer.getTicks() / 1000.f );
+	if( avgFPS > 2000000 )
+	{
+		avgFPS = 0;
+	}
 	states.back()->HandleEvents(this);
 }
 
@@ -87,6 +100,14 @@ void Game::Draw()
 	SDL_RenderClear(renderer);
 	states.back()->Draw(this);
 	SDL_RenderPresent(renderer);
+
+	++countedFrames;
+
+	int frameTicks = capTimer.getTicks();
+	if( frameTicks < SCREEN_TICK_PER_FRAME )
+	{
+		SDL_Delay( SCREEN_TICK_PER_FRAME - frameTicks );
+	}
 }
 
 void Game::Clean()
@@ -113,4 +134,3 @@ SDL_Renderer* Game::GetScreen()
 {
 	return this->renderer;
 }
-

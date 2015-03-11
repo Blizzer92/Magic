@@ -25,10 +25,10 @@ Needed to compile the engine:
 * SDL2_image
 * SDL2_ttf
 
-## Licence and copyright
+## License and copyright
 
 Copyright © Sven Jütte
 
-Magic-Engine is licensed under the MIT license, which can be found in the LICENCE file.
+Magic-Engine is licensed under the MIT license, which can be found in the LICENSE file.
 
-The project comes bundled with a number of dependencies, each with its own licence.
+The project comes bundled with a number of dependencies, each with its own license.
