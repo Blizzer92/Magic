@@ -1,26 +1,26 @@
 /**
- * Diese Klasse erzeugt ein Objekt mit den vorgegeben Parametern,
- * mit diesen Objekt können dann Kolisionsabfragen gemacht werden oder änliches.
+ * Diese Klasse erzeugt ein Object mit den vorgegeben Parametern,
+ * mit diesen Object können dann Kolisionsabfragen gemacht werden oder änliches.
  */
 
-#ifndef _OBJEKT_H_
-#define _OBJEKT_H_
+#ifndef _OBJECT_H_
+#define _OBJECT_H_
 
 #include <SDL2/SDL.h>
 
-class Objekt
+class Object
 {
 	public:
         /**
-         * Objekt wird mittels Construkter erstellt damit es zu keinen Fehler kommt
+         * Object wird mittels Construkter erstellt damit es zu keinen Fehler kommt
          * wenn einer der Parametern nicht gegeben sein sollte.
-         * @param src Texture des Objektes
-         * @param x X Position des Objektes
-         * @param y Y Position des Objektes
-         * @param width Breite des Objektes
-         * @param height Höhe des Objektes
+         * @param src Texture des Objectes
+         * @param x X Position des Objectes
+         * @param y Y Position des Objectes
+         * @param width Breite des Objectes
+         * @param height Höhe des Objectes
          */
-		Objekt(SDL_Texture* src,float x, float y, int width, int height);
+		Object(SDL_Texture* src,float x, float y, int width, int height);
         /**
          * Gibt die x-Position zurück
          * @return int
@@ -72,7 +72,7 @@ class Objekt
          */
         void setTexture(SDL_Texture* tex);
         /**
-         * Zeichnet das Objekt auf den Renderer
+         * Zeichnet das Object auf den Renderer
          * @param ren der Renderer
          */
 		void Draw(SDL_Renderer* ren);

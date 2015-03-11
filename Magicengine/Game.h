@@ -6,7 +6,7 @@
 #include <SDL2/SDL_ttf.h>
 #include "Texture.h"
 #include "Load.h"
-#include "Objekt.h"
+#include "Object.h"
 #include "Font.h"
 #include <vector>
 

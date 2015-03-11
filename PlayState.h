@@ -35,7 +35,7 @@ class PlayState : public GameState
 	private:
 		static PlayState m_PlayState;
 		SDL_Texture* playTexture;
-		Objekt* test;
+		Object* test;
 		Timer* timer;
 		std::stringstream timeText;
 		SDL_Color textColor;
