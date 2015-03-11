@@ -1,14 +1,24 @@
 #include "Object.h"
-#include "Texture.h"
-#include "Load.h"
 
-	Object::Object(SDL_Texture* src, float x, float y, int width, int height, SDL_Renderer* newren){
+	Object::Object(SDL_Texture* src, SDL_Renderer* ren, float x, float y){
+		int w;
+		int h;
+		SDL_QueryTexture(src, NULL, NULL, &w, &h);
+		setTexture(src);
+		setX(x);
+		setY(y);
+		setWidth(w);
+		setHeight(h);
+		setRenderer(ren);
+	}
+	Object::Object(SDL_Texture* src, SDL_Renderer* ren, float x, float y, int width, int height)
+	{
 		setTexture(src);
 		setX(x);
 		setY(y);
 		setWidth(width);
 		setHeight(height);
-		setRenderer(newren);
+		setRenderer(ren);
 	}
 
 
@@ -51,6 +61,22 @@
     void Object::setTexture(SDL_Texture* tex){
     texture = tex;
     }
-		void Object::Draw(){
-			Texture::Draw(ren, texture, x, y,width, height);
+
+		bool Object::Draw()
+		{
+
+			  if(ren == NULL || texture == NULL)
+			   {
+						  return false;
+			   }
+
+			  SDL_Rect  destR;
+			  destR.x = x;
+			  destR.y = y;
+			  destR.w = width;
+				destR.h = height;
+
+				SDL_RenderCopy(ren, texture, NULL, &destR);
+
+				return true;
 		}

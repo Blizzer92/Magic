@@ -7,21 +7,31 @@
 #define _OBJECT_H_
 
 #include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 
 class Object
 {
 	public:
+				/**
+				* Object wird mittels Construkter erstellt damit es zu keinen Fehler kommt
+				* wenn einer der Parametern nicht gegeben sein sollte.
+				* @param src Texture des Objectes
+				* @param ren Renderer
+				* @param x X Position des Objectes
+				* @param y Y Position des Objectes
+				*/
+		Object(SDL_Texture* src, SDL_Renderer* ren, float x, float y);
         /**
          * Object wird mittels Construkter erstellt damit es zu keinen Fehler kommt
          * wenn einer der Parametern nicht gegeben sein sollte.
          * @param src Texture des Objectes
+				 * @param ren Renderer
          * @param x X Position des Objectes
          * @param y Y Position des Objectes
          * @param width Breite des Objectes
          * @param height Höhe des Objectes
-				 * @param ren Renderer
          */
-		Object(SDL_Texture* src,float x, float y, int width, int height, SDL_Renderer* newren);
+		Object(SDL_Texture* src, SDL_Renderer* ren, float x, float y, int width, int height);
         /**
          * Gibt die x-Position zurück
          * @return int
@@ -82,11 +92,11 @@ class Object
          * @param tex
          */
     void setTexture(SDL_Texture* tex);
-        /**
-         * Zeichnet das Object auf den Renderer
-         * @param ren der Renderer
-         */
-		void Draw();
+				/**
+				* Zeichen der Texturen
+				* @return TRUE
+				*/
+		bool Draw();
 
 
 

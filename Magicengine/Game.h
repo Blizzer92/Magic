@@ -4,7 +4,6 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_ttf.h>
-#include "Texture.h"
 #include "Load.h"
 #include "Object.h"
 #include "Font.h"
