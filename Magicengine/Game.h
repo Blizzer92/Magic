@@ -6,6 +6,7 @@
 #include <SDL2/SDL_ttf.h>
 #include "Load.h"
 #include "Object.h"
+#include "Timer.h"
 #include "Font.h"
 #include <vector>
 
