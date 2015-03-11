@@ -3,7 +3,6 @@
 
 #include "SDL2/SDL.h"
 #include "Magicengine/GameState.h"
-#include "Magicengine/Texture.h"
 #include "Magicengine/Load.h"
 #include "Magicengine/Font.h"
 #include "Magicengine/Timer.h"
@@ -35,7 +34,8 @@ class PlayState : public GameState
 	private:
 		static PlayState m_PlayState;
 		SDL_Texture* playTexture;
-		Objekt* test;
+		Object* test;
+		Object* test2;
 		Timer* timer;
 		std::stringstream timeText;
 		SDL_Color textColor;

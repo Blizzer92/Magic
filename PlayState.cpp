@@ -13,7 +13,8 @@ void PlayState::Init(Game* game)
 	playTexture = Load::Texture("test.png", game->GetScreen());
 	textColor = { 255, 255, 255 };
 	fonttype = Load::Font("Font/lazy.ttf", 26);
-	test = new Objekt(playTexture, 0,0,50,50);
+	test = new Object(playTexture, game->GetScreen(), 0,0,50,50);
+	test2 = new Object(playTexture, game->GetScreen(), 100,100);
 	timeFont = new Font(timeText.str(), fonttype, textColor, 50, 50, game->GetScreen());
 	timer = new Timer();
 	timer->start();
@@ -51,6 +52,10 @@ void PlayState::HandleEvents(Game* game)
 
 void PlayState::Update(Game* game)
 {
+
+
+	test2->setWidth(test2->getWidth()+1);
+	test2->setHeight(test2->getHeight()+1);
 	test->setX(test->getX()+1);
 	timeText.str( "" );
 	timeText << "Seconds since start time " << (timer->getTicks()/1000.f);
@@ -59,9 +64,7 @@ void PlayState::Update(Game* game)
 
 void PlayState::Draw(Game* game)
 {
-
 	timeFont->Draw();
-	test->Draw(game->GetScreen());
-	Texture::Draw(game->GetScreen(), playTexture, 100, 100);
-
+	test->Draw();
+	test2->Draw();
 }
