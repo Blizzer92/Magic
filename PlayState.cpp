@@ -53,7 +53,7 @@ void PlayState::HandleEvents(Game* game)
 
 void PlayState::Update(Game* game)
 {
-	test->setY(test->getY()+10);
+	
 
 	timeText.str( "" );
 	timeText << "Seconds since start time " << (timer->getTicks()/1000.f);
