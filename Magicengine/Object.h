@@ -8,7 +8,7 @@
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
-#include "Physics.h"
+
 
 class Object
 {
@@ -21,7 +21,7 @@ class Object
 				* @param x X Position des Objectes
 				* @param y Y Position des Objectes
 				*/
-		Object(SDL_Texture* src, SDL_Renderer* ren, float x, float y, bool gravity);
+		Object(SDL_Texture* src, SDL_Renderer* ren, float x, float y);
         /**
          * Object wird mittels Construkter erstellt damit es zu keinen Fehler kommt
          * wenn einer der Parametern nicht gegeben sein sollte.
@@ -32,7 +32,7 @@ class Object
          * @param width Breite des Objectes
          * @param height Höhe des Objectes
          */
-		Object(SDL_Texture* src, SDL_Renderer* ren, float x, float y, int width, int height, bool gravity);
+		Object(SDL_Texture* src, SDL_Renderer* ren, float x, float y, int width, int height);
         /**
          * Gibt die x-Position zurück
          * @return int

@@ -1,4 +1,4 @@
-#include "Font.h"
+#include "Physics.h"
 
 Physics::Physics()
 {
@@ -6,13 +6,13 @@ Physics::Physics()
 }
 
 void Physics::addObject(Object* object){
-
+  objects.push_back(object);
 }
 
-Physics::Gravity(int deltaTime)
+void Physics::Gravity(float deltaTime)
 {
-  for (auto &object : objects) // access by reference to avoid copying
+  for (auto& object : objects)
       {
-        object->setY(object->getY() - 0.2f * deltaTime);
+        object->setY(object->getY() + 9.81f * deltaTime);
       }
 }

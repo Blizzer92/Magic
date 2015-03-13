@@ -34,6 +34,7 @@ void Game::Window(const char* title, int width, int height, int bpp, bool fullsc
 		fpsTimer.start();
 		SCREEN_FPS = fps;
 		SCREEN_TICK_PER_FRAME = 1000 / SCREEN_FPS;
+		phy = new Physics();
 
 	printf("Game Initialised Succesfully\n");
 }
@@ -79,7 +80,7 @@ void Game::PopState()
 
 void Game::HandleEvents()
 {
-	capTimer.start();
+	deltaTime = deltaTimer.getTicks() / 1000.f;
 	avgFPS = countedFrames / ( fpsTimer.getTicks() / 1000.f );
 	if( avgFPS > 2000000 )
 	{
@@ -91,6 +92,8 @@ void Game::HandleEvents()
 
 void Game::Update()
 {
+
+	phy->Gravity(deltaTime);
 	states.back()->Update(this);
 }
 
@@ -106,6 +109,7 @@ void Game::Draw()
 	{
 		SDL_Delay( SCREEN_TICK_PER_FRAME - frameTicks );
 	}
+	deltaTimer.start();
 }
 
 void Game::Clean()
@@ -131,4 +135,9 @@ void Game::Quit()
 SDL_Renderer* Game::GetScreen()
 {
 	return this->renderer;
+}
+
+Physics* Game::getPhysics()
+{
+	return this->phy;
 }

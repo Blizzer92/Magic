@@ -41,6 +41,7 @@ class PlayState : public GameState
 		SDL_Color textColor;
 		TTF_Font* fonttype;
 		Font* timeFont;
+		Physics* phy2;
 
 };
 

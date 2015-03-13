@@ -29,6 +29,7 @@ class Game
 		bool Running();
 		void Quit();
 		SDL_Renderer* GetScreen();
+		Physics* getPhysics();
 
 		bool m_bRunning;
 		SDL_Window* screen;
@@ -41,9 +42,12 @@ class Game
 		TTF_Font* renderFont;
 		Timer fpsTimer;
 		Timer capTimer;
+		Timer deltaTimer;
 		int countedFrames;
 		int SCREEN_FPS;
 		int SCREEN_TICK_PER_FRAME;
+		float deltaTime;
 		float avgFPS;
+		Physics* phy;
 };
 #endif

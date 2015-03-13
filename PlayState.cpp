@@ -7,16 +7,18 @@ PlayState PlayState::m_PlayState;
 
 void PlayState::Init(Game* game)
 {
-
+	phy2 = game->getPhysics();
 	playTexture = NULL;
 	playTexture = Load::Texture("test.png", game->GetScreen());
 	textColor = { 255, 255, 255 };
 	fonttype = Load::Font("Font/lazy.ttf", 26);
-	test = new Object(playTexture, game->GetScreen(), 0,0,50,50, true);
-	test2 = new Object(playTexture, game->GetScreen(), 100,100, true);
+	test = new Object(playTexture, game->GetScreen(), 0,0,50,50);
+	test2 = new Object(playTexture, game->GetScreen(), 100,100);
 	timeFont = new Font(timeText.str(), fonttype, textColor, 50, 50, game->GetScreen());
 	timer = new Timer();
 	timer->start();
+	phy2->addObject(test);
+	phy2->addObject(test2);
 	printf("PlayState Init Successful\n");
 }
 
@@ -51,11 +53,8 @@ void PlayState::HandleEvents(Game* game)
 
 void PlayState::Update(Game* game)
 {
+	test->setY(test->getY()+10);
 
-
-	test2->setWidth(test2->getWidth()+1);
-	test2->setHeight(test2->getHeight()+1);
-	test->setX(test->getX()+1);
 	timeText.str( "" );
 	timeText << "Seconds since start time " << (timer->getTicks()/1000.f);
 	timeFont->setText(timeText.str());
