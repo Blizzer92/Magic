@@ -2,7 +2,6 @@
  * Class for drawing font
  */
 
-
 #ifndef _FONT_H_
 #define _FONT_H_
 
@@ -32,7 +31,7 @@ class Font
         int getY();
         SDL_Renderer* getRenderer();
 
-      private:
+    private:
         std::string text;
         TTF_Font* font;
         SDL_Color color;

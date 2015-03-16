@@ -6,5 +6,5 @@ ObjectManager::ObjectManager()
 }
 
 void ObjectManager::addObject(Object* object){
-  objects.push_back(object);
+    objects.push_back(object);
 }

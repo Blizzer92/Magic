@@ -6,13 +6,13 @@ Physics::Physics()
 }
 
 void Physics::addObject(Object* object){
-  objects.push_back(object);
+    objects.push_back(object);
 }
 
 void Physics::Gravity(float deltaTime)
 {
-  for (auto& object : objects)
-      {
+    for (auto& object : objects)
+    {
         object->setY(object->getY() + 9.81f * deltaTime);
-      }
+    }
 }
