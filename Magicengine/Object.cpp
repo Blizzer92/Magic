@@ -1,3 +1,5 @@
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include "Object.h"
 
 Object::Object(SDL_Texture* src, SDL_Renderer* ren, float x, float y)

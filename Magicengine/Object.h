@@ -6,9 +6,8 @@
 #ifndef _OBJECT_H_
 #define _OBJECT_H_
 
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
-
+struct SDL_Texture;
+struct SDL_Renderer;
 
 class Object
 {
