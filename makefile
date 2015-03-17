@@ -1,4 +1,4 @@
-CXX = g++
+CXX = c++
 CXXFLAGS = -g -Wno-write-strings
 LDFLAGS = -g
 
