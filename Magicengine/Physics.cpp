@@ -13,6 +13,6 @@ void Physics::Gravity(float deltaTime)
 {
     for (auto& object : objects)
     {
-        object->setY(object->getY() + 9.81f * deltaTime);
+        object->setY(object->getY() + 10);
     }
 }

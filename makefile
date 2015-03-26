@@ -16,8 +16,6 @@ all: test .gitignore
 test: $(OBJECTS)
 	$(CXX) -o $@ $? $(LDFLAGS)
 
-include doku.makefile
-
 clean:
 	rm -fv $(GENERATED)
 
