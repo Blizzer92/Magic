@@ -12,8 +12,10 @@ class Physics
         Physics();
         void addObject(Object* object);
         void Gravity(float deltaTime);
+        void Collision();
 
     private:
         std::vector<Object*> objects;
+        int x = 1;
 };
 #endif

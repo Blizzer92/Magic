@@ -16,3 +16,15 @@ void Physics::Gravity(float deltaTime)
         object->setY(object->getY() + 10);
     }
 }
+
+void Physics::Collision(){
+  for (auto& object1 : objects)
+  {
+    for(auto% object2 : objects)
+    {
+
+    }
+    x++;
+  }
+  x = 1;
+}
