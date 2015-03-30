@@ -12,6 +12,7 @@ The engine is still under heavy development!
 
 ## Planning
 
+* Support for Jolla Phone/Tablett
 * Sound management
 * Physics
 * Collision
