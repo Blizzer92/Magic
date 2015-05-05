@@ -20,7 +20,7 @@ void Physics::Gravity(float deltaTime)
 void Physics::Collision(){
   for (auto& object1 : objects)
   {
-    for(auto% object2 : objects)
+    for(auto& object2 : objects)
     {
 
     }
