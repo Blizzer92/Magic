@@ -1,6 +1,8 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include "Object.h"
+#include <glm/detail/type_vec.hpp>
+#include <glm/detail/type_vec2.hpp>
 
 Object::Object(SDL_Texture* src, SDL_Renderer* ren, float x, float y)
 {
@@ -13,6 +15,7 @@ Object::Object(SDL_Texture* src, SDL_Renderer* ren, float x, float y)
     setWidth(w);
     setHeight(h);
     setRenderer(ren);
+    setGeschwindigkeit(0f,0f);
 }
 
 Object::Object(SDL_Texture* src, SDL_Renderer* ren, float x, float y, int width, int height)
@@ -43,6 +46,10 @@ SDL_Texture* Object::getTexture(){
 
 SDL_Renderer* Object::getRenderer(){
     return ren;
+}
+
+void Object::setGeschwindigkeit(float one, float two) {
+    geschwindigkeit(one, two);
 }
 
 void Object::setRenderer(SDL_Renderer* newren){

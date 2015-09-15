@@ -11,9 +11,21 @@ void Physics::addObject(Object* object){
 
 void Physics::Gravity(float deltaTime)
 {
+    /* pos += vel * timeDelta
+     * vel.y += gravity * timeDelta */
+
+
     for (auto& object : objects)
     {
-        object->setY(object->getY() + 10);
+
+        auto vel = 0;
+        vel =+ 9.81f * deltaTime;
+        object->setY(object->getY() + vel * deltaTime);
+
+
+
+
+
     }
 }
 

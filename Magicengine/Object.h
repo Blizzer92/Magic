@@ -6,6 +6,10 @@
 #ifndef _OBJECT_H_
 #define _OBJECT_H_
 
+
+#include <glm/detail/type_vec.hpp>
+#include <glm/detail/type_vec2.hpp>
+
 struct SDL_Texture;
 struct SDL_Renderer;
 
@@ -92,6 +96,8 @@ class Object
          * @param tex
          */
         void setTexture(SDL_Texture* tex);
+
+        void setGeschwindigkeit(float one, float two);
         /**
          * Zeichen der Texturen
          * @return TRUE
@@ -105,6 +111,7 @@ class Object
         float y;
         int width;
         int height;
+        glm::vec2 geschwindigkeit;
         SDL_Texture* texture;
         SDL_Renderer* ren;
 };
