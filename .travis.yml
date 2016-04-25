@@ -5,7 +5,7 @@ before_install:
   - sudo add-apt-repository --yes ppa:ubuntu-toolchain-r/test     # newer toolchain
   - sudo apt-add-repository --yes ppa:zoogie/sdl2-snapshots       # libsdl2
   - export PATH=~/usr/bin:$PATH
-
+  - echo $PATH
   - echo $CXX
   - $CXX --version
 
